@@ -10,6 +10,7 @@
 
 package subsets;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,12 +24,16 @@ public class Main {
 		scan.close();
 		
 		if(n >= 0) {
+			LocalTime start = java.time.LocalTime.now();
 			ArrayList<String> finalSets = subsets.createSubsets(subsets.generateBitStrings(n), n);
 			System.out.println("The set " + subsets.createSet(n) + " generates the following " 
 								+ (int) Math.pow(2, n) + " subsets:");
 			for(int i=finalSets.size()-1; i >= 0; i--) {
 				System.out.println("{ " + finalSets.get(i) + "}");
 			}
+			System.out.println();
+			System.out.println("Program start: " + start.toString());
+			System.out.println("Program end: " + java.time.LocalTime.now());
 		} else {
 			System.out.println("Bad input");
 		}
