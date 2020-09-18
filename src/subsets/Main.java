@@ -26,7 +26,7 @@ public class Main {
 			ArrayList<String> finalSets = subsets.createSubsets(subsets.generateBitStrings(n), n);
 			System.out.println("The set " + subsets.createSet(n) + " generates the following " 
 								+ (int) Math.pow(2, n) + " subsets:");
-			for(int i=0; i < finalSets.size(); i++) {
+			for(int i=finalSets.size()-1; i >= 0; i--) {
 				System.out.println(finalSets.get(i));
 			}
 		} else {
