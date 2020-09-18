@@ -39,13 +39,7 @@ public class GenerateSubsets {
 				}
 			}
 			temp = temp + "";
-			
-			String[] tokens = temp.split(" ");
-			temp = "";
-			for(int k=tokens.length-1; k >= 0; k--) {
-				temp = temp + tokens[k] + " ";
-			}
-			
+			temp = reverseSet(temp);
 			subsets.add(temp);
 			temp = "";
 			n = startingValue;
@@ -61,5 +55,14 @@ public class GenerateSubsets {
 		}
 		origSet = origSet + "}";
 		return origSet;
+	}
+	
+	public String reverseSet(String str) {
+		String[] tokens = str.split(" ");
+		str = "";
+		for(int k=tokens.length-1; k >= 0; k--) {
+			str = str + tokens[k] + " ";
+		}
+		return str;
 	}
 }
