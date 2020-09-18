@@ -26,7 +26,7 @@ public class GenerateSubsets {
 	
 	public ArrayList<String> createSubsets(ArrayList<String> bitStrings, int n) {
 		ArrayList<String> subsets = new ArrayList<String>();
-		String temp = "{ ";
+		String temp = "";
 		int startingValue = n;
 		
 		for(int i=0; i < bitStrings.size(); i++) {
@@ -38,12 +38,19 @@ public class GenerateSubsets {
 					n--;
 				}
 			}
-			temp = temp + "}";
+			temp = temp + "";
+			
+			String[] tokens = temp.split(" ");
+			temp = "";
+			for(int k=tokens.length-1; k >= 0; k--) {
+				temp = temp + tokens[k] + " ";
+			}
+			
 			subsets.add(temp);
-			temp = "{ ";
+			temp = "";
 			n = startingValue;
 		}
-		subsets.set(0, "{  } (empty set)");
+		subsets.set(0, "empty set ");
 		return subsets;
 	}	
 	

@@ -27,7 +27,7 @@ public class Main {
 			System.out.println("The set " + subsets.createSet(n) + " generates the following " 
 								+ (int) Math.pow(2, n) + " subsets:");
 			for(int i=finalSets.size()-1; i >= 0; i--) {
-				System.out.println(finalSets.get(i));
+				System.out.println("{ " + finalSets.get(i) + "}");
 			}
 		} else {
 			System.out.println("Bad input");
