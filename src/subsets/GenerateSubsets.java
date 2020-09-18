@@ -1,3 +1,13 @@
+/* Michael Janks  
+	 * EID: E00800623
+	 * COSC 314
+	 * Fall 2020
+	 * Lab 1
+	 * 
+	 * This program generates all possible subsets of the set { 1 2 3 ... n } .
+	 * n is an integer specified by the user.
+	 */
+
 package subsets;
 
 import java.util.ArrayList;
@@ -33,7 +43,16 @@ public class GenerateSubsets {
 			temp = "{ ";
 			n = startingValue;
 		}
-		subsets.set(0, "{ 0 } (empty set)");
+		subsets.set(0, "{  } (empty set)");
 		return subsets;
 	}	
+	
+	public String createSet(int n) {
+		String origSet = "{ ";
+		for(int i=1; i <= n; i++) {
+			origSet = origSet + i + " ";
+		}
+		origSet = origSet + "}";
+		return origSet;
+	}
 }
