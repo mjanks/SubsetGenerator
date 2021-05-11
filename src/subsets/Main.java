@@ -10,7 +10,6 @@
 
 package subsets;
 
-import java.text.NumberFormat.Style;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,8 +31,8 @@ public class Main {
 			for (int i = finalSets.size() - 1; i >= 0; i--) {
 				System.out.println("{ " + finalSets.get(i) + "}");
 			}
-			System.out.println("Total number of sets: " + finalSets.size());
 			System.out.println();
+			System.out.println("Total number of sets: " + finalSets.size());
 			System.out.println("Program start: " + start.toString());
 			System.out.println("Program end: " + java.time.LocalTime.now());
 		} else {
