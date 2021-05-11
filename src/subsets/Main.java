@@ -10,6 +10,7 @@
 
 package subsets;
 
+import java.text.NumberFormat.Style;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -22,15 +23,16 @@ public class Main {
 		System.out.print("Enter the number of positive integers n for the set { 1 2 3 ... n }: ");
 		int n = scan.nextInt();
 		scan.close();
-		
-		if(n >= 0) {
+
+		if (n >= 0) {
 			LocalTime start = java.time.LocalTime.now();
 			ArrayList<String> finalSets = subsets.createSubsets(subsets.generateBitStrings(n), n);
-			System.out.println("The set " + subsets.createSet(n) + " generates the following " 
-								+ (int) Math.pow(2, n) + " subsets:");
-			for(int i=finalSets.size()-1; i >= 0; i--) {
+			System.out.println("The set " + subsets.createSet(n) + " generates the following " + (int) Math.pow(2, n)
+					+ " subsets:");
+			for (int i = finalSets.size() - 1; i >= 0; i--) {
 				System.out.println("{ " + finalSets.get(i) + "}");
 			}
+			System.out.println("Total number of sets: " + finalSets.size());
 			System.out.println();
 			System.out.println("Program start: " + start.toString());
 			System.out.println("Program end: " + java.time.LocalTime.now());
